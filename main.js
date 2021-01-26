@@ -19,13 +19,22 @@ class Calculator {
         let arr = this.getNumbersArray();
         arr.map(num => {
             let convertedNum = this.convertToInteger(num)
-            if (convertedNum < 0) throw new Error("Negatives not allowed")
-            else {
-                sum += this.convertToInteger(num)
-            }
+            let validatedNum = this.validator(convertedNum)
+            sum += validatedNum;
         })
         return sum;
     }
+
+    validator (num) {
+        if (num < 0) {
+            throw new Error("Negatives not allowed")
+        } else if (num > 1000) {
+            return 0
+        } else {
+            return num;
+        }
+    }
+
 
     getDelimiter() {
         if (this.numbers.indexOf(this.delimiterIndicator) != -1) {
@@ -66,9 +75,6 @@ let t4 = new Calculator('1')
 if (t4.add() !== 1) {
     console.log("Error, please check again! The result should be 1")
 }
-
-
-
 
 
 
