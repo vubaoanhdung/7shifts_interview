@@ -18,7 +18,11 @@ class Calculator {
         let sum = 0;
         let arr = this.getNumbersArray();
         arr.map(num => {
-            sum += this.convertToInteger(num)
+            let convertedNum = this.convertToInteger(num)
+            if (convertedNum < 0) throw new Error("Negatives not allowed")
+            else {
+                sum += this.convertToInteger(num)
+            }
         })
         return sum;
     }
