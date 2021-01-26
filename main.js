@@ -1,6 +1,7 @@
 // Damon Vu
 // damon.vu@usask.ca
 // 306-241-5778
+// 7Shifts - Coding Question
 
 // --------------
 
@@ -37,6 +38,7 @@ class Calculator {
 
 
     getDelimiter() {
+        // if there is a delimiter indicator
         if (this.numbers.indexOf(this.delimiterIndicator) != -1) {
             return this.numbers[this.delimiterIndex];
         }
@@ -75,12 +77,3 @@ let t4 = new Calculator('1')
 if (t4.add() !== 1) {
     console.log("Error, please check again! The result should be 1")
 }
-
-
-
-
-
-
-
-
-
